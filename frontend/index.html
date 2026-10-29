@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TastyExpress</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    
+    <input type="radio" name="navigation" id="nav-menu" class="state-controller" checked>
+    <input type="radio" name="navigation" id="nav-product" class="state-controller">
+    <input type="radio" name="navigation" id="nav-cart-filled" class="state-controller">
+    <input type="radio" name="navigation" id="nav-cart-empty" class="state-controller">
+    <input type="checkbox" id="cheese-toggle" class="state-controller">
+    
+
+    <nav class="navbar">
+        <h1>TastyExpress</h1>
+        <input type="text" class="search-bar" placeholder="Buscar productos...">
+        <div class="nav-links">
+            <span class="cart-count-0">🛒 Carrito (0)</span>
+            <span class="cart-count-2">🛒 Carrito (2)</span>
+            <span>Mi cuenta</span>
+        </div>
+    </nav>
+
+    
+    <div id="screen-menu" class="screen">
+        <h2>Nuestro menú</h2>
+        
+        
+        <div class="menu-filters">
+            <div class="filters-left">
+                <span class="filter-pill active">Todos</span>
+                <span class="filter-pill">Hamburguesas</span>
+                <span class="filter-pill">Pizzas</span>
+                <span class="filter-pill">Bebidas</span>
+                <span class="filter-pill">Postres</span>
+            </div>
+            <div class="filters-right">
+                <span class="filter-pill outline">Hasta $5.00</span>
+            </div>
+        </div>
+
+        <div class="menu-grid">
+            
+            <div class="product-card">
+                <div class="img-placeholder">Imagen</div>
+                <h3>Hamburguesa Clásica</h3>
+                <p>$5.50</p>
+                
+                <label for="nav-product" class="btn-add">Agregar</label>
+            </div>
+            
+            
+            <div class="product-card"><div class="img-placeholder">Imagen</div><h3>Hamburguesa BBQ</h3><p>$6.75</p><a class="btn-add">Agregar</a></div>
+            <div class="product-card"><div class="img-placeholder">Imagen</div><h3>Pizza Pepperoni</h3><p>$8.50</p><a class="btn-add">Agregar</a></div>
+            <div class="product-card"><div class="img-placeholder"><span class="badge-agotado">Agotado</span>Imagen</div><h3>Pizza Hawaiana</h3><p>$8.00</p><a class="btn-add disabled">Agregar</a></div>
+            <div class="product-card"><div class="img-placeholder">Imagen</div></div>
+            <div class="product-card"><div class="img-placeholder">Imagen</div></div>
+        </div>
+    </div>
+
+    
+    <div id="screen-product" class="screen">
+        <label for="nav-menu" class="btn-link">← Volver al menú</label>
+        
+        <div class="product-layout">
+            <div class="product-image">Imagen del producto</div>
+            
+            <div class="product-info">
+                <h2>Hamburguesa Clásica</h2>
+                <p class="desc">Carne de res de 120 g con lechuga, tomate y cebolla en pan brioche.</p>
+                
+                <div class="price-section">
+                    
+                    <span class="price price-default">$5.50</span>
+                    <span class="price price-cheese">$6.25</span>
+                    <span class="price-detail">Precio base $5.50 + Queso extra $0.75</span>
+                </div>
+
+                <div class="section-title">Ingredientes</div>
+                <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" checked disabled> Pan <span class="disabled-text">Este ingrediente no puede eliminarse</span></label>
+                    <label class="checkbox-label"><input type="checkbox" checked readonly> Carne</label>
+                    <label class="checkbox-label"><input type="checkbox" checked readonly> Lechuga</label>
+                    <label class="checkbox-label"><input type="checkbox" checked readonly> Tomate</label>
+                    <label class="checkbox-label"><input type="checkbox" checked readonly> Cebolla</label>
+                </div>
+
+                <div class="section-title">Extras</div>
+                <div class="checkbox-group">
+                    
+                    <label for="cheese-toggle" class="checkbox-label">
+                        <span class="custom-checkbox-icon"></span> Queso extra (+$0.75)
+                    </label>
+                    <label class="checkbox-label"><input type="checkbox" readonly> Tocino (+$1.00)</label>
+                </div>
+
+                <div class="qty-control">
+                    <span style="font-weight:bold; font-size:14px;">Cantidad</span>
+                    <div class="qty-box">
+                        <span>-</span> <span>1</span> <span>+</span>
+                    </div>
+                </div>
+
+                
+                <label for="nav-cart-filled" class="btn-large btn-default">Agregar al carrito — $5.50</label>
+                <label for="nav-cart-filled" class="btn-large btn-cheese">Agregar al carrito — $6.25</label>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="screen-cart-filled" class="screen">
+        <h2>Tu carrito</h2>
+        
+        <div class="cart-layout">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <div class="cart-item-left">
+                        <div class="cart-item-img"></div>
+                        <div>
+                            <strong>Hamburguesa Clásica</strong>
+                            <div style="color:#888; font-size:12px; margin-top:5px;">Precio unitario: $5.50</div>
+                        </div>
+                    </div>
+                    <div class="qty-box" style="margin-bottom:0;">
+                        <span>-</span> <span>2</span> <span>+</span>
+                    </div>
+                    
+                    <label for="nav-cart-empty" class="delete-btn">🗑️</label>
+                    <strong>$11.00</strong>
+                </div>
+                <label for="nav-menu" class="btn-link" style="margin-top: 20px; display:inline-block;">← Seguir comprando</label>
+            </div>
+            
+            <div class="cart-summary">
+                <h3>Resumen del pedido</h3>
+                <div class="subtotal">Subtotal: <span>$11.00</span></div>
+                <p class="summary-note">El envío se calcula en el siguiente paso.</p>
+                <a class="btn-large">Continuar</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="screen-cart-empty" class="screen">
+        <h2>Tu carrito</h2>
+        <div class="empty-cart">
+            <div class="empty-cart-icon">🛍️</div>
+            <h2>Tu carrito está vacío</h2>
+            <p>Agrega productos desde el menú para comenzar.</p>
+            <label for="nav-menu" class="btn-link">Ver menú</label>
+            <br>
+            <a class="btn-continue">Continuar</a>
+        </div>
+    </div>
+
+</body>
+</html>
